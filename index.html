@@ -87,8 +87,8 @@
             border-radius: 30px; 
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            object-position: center; /* Ensures the image content is centered */
+            object-fit: cover; /* Changed to cover to fill, but with object-position */
+            object-position: top; /* Position the image from the top */
             display: block;
         }
 
@@ -180,38 +180,32 @@
 </head>
 <body class="p-4 md:p-8">
 
-    <!-- 1. NAVIGATION DRAWER (SIDEBAR) -->
-    <nav 
+    <!-- 1. NAVIGATION DRAWER (SIDEBAR) --><nav 
         id="sidebar" 
         class="sidebar fixed top-0 right-0 h-full w-64 bg-gray-900 z-50 p-6 flex flex-col"
     >
-        <!-- Close Button -->
-        <div class="flex justify-end mb-10">
+        <!-- Close Button --><div class="flex justify-end mb-10">
             <button id="close-sidebar-btn" class="text-white hover:text-red-400 p-2 rounded-full transition-colors">
                 <i class="fas fa-times text-3xl"></i>
             </button>
         </div>
 
-        <!-- Menu Links -->
-        <ul class="space-y-6 flex-grow">
-            <!-- Home Link -->
-            <li>
+        <!-- Menu Links --><ul class="space-y-6 flex-grow">
+            <!-- Home Link --><li>
                 <a href="#top" id="home-link" class="flex items-center space-x-4 text-xl font-semibold text-gray-200 hover:text-red-400 transition-colors py-2 px-3 rounded-lg hover:bg-gray-800">
                     <i class="fas fa-home w-6"></i>
                     <span>Home</span>
                 </a>
             </li>
             
-            <!-- Credit Link -->
-            <li>
+            <!-- Credit Link --><li>
                 <a href="#credits" id="credit-link" class="flex items-center space-x-4 text-xl font-semibold text-gray-200 hover:text-red-400 transition-colors py-2 px-3 rounded-lg hover:bg-gray-800">
                     <i class="fas fa-code w-6"></i>
                     <span>Credit</span>
                 </a>
             </li>
 
-            <!-- Download Link (Note: This is an external link, clicking it will trigger the download) -->
-            <li>
+            <!-- Download Link (Note: This is an external link, clicking it will trigger the download) --><li>
                 <a 
                     href="https://drive.google.com/uc?export=download&id=1YQESnjK1zDKtHpYEMiCzS6V5dQagN3hJ" 
                     target="_blank" 
@@ -224,39 +218,32 @@
             </li>
         </ul>
 
-        <!-- Sidebar Footer -->
-        <div class="text-center text-sm text-gray-600 mt-8">
+        <!-- Sidebar Footer --><div class="text-center text-sm text-gray-600 mt-8">
             <p>NETARCX v3.2.6</p>
             <p class="text-xs mt-1">Built with style.</p>
         </div>
 
     </nav>
 
-    <!-- 2. OVERLAY -->
-    <div 
+    <!-- 2. OVERLAY --><div 
         id="sidebar-overlay" 
         class="fixed inset-0 bg-black opacity-0 pointer-events-none transition-opacity duration-300 z-40"
     ></div>
 
-    <!-- 3. HEADER (Fixed, Full-Width with Centered Content AND GLASSY BACKGROUND) -->
-    <header class="fixed-header-bg fixed top-0 left-0 right-0 z-20 py-2 animate-fadeInUp" style="animation-delay: 0.1s;">
-        <!-- This inner div ensures the content is centered and width constrained -->
-        <div class="max-w-xl mx-auto w-full flex justify-between items-center px-4">
+    <!-- 3. HEADER (Fixed, Full-Width with Centered Content AND GLASSY BACKGROUND) --><header class="fixed-header-bg fixed top-0 left-0 right-0 z-20 py-2 animate-fadeInUp" style="animation-delay: 0.1s;">
+        <!-- This inner div ensures the content is centered and width constrained --><div class="max-w-xl mx-auto w-full flex justify-between items-center px-4">
             
-            <!-- Left: Logo (w-10 h-10 for 40px) and Text (INLINE) -->
-            <div class="flex items-center cursor-pointer">
+            <!-- Left: Logo (w-10 h-10 for 40px) and Text (INLINE) --><div class="flex items-center cursor-pointer">
                 <img 
                     src="https://i.ibb.co/cX2MzMPR/1764412904709-1.png" 
                     alt="NETARCX App Logo" 
                     class="app-logo mr-2 w-10 h-10" 
                     onerror="this.onerror=null; this.src='https://placehold.co/40x40/1f2937/ef4444?text=N';" 
                 />
-                <!-- Text is inline and vertically centered -->
-                <span class="text-white text-2xl font-bold tracking-wider">NETARC<span class="text-red-400">X</span></span>
+                <!-- Text is inline and vertically centered --><span class="text-white text-2xl font-bold tracking-wider">NETARC<span class="text-red-400">X</span></span>
             </div>
             
-            <!-- Right: Menu Button -->
-            <div class="flex justify-end">
+            <!-- Right: Menu Button --><div class="flex justify-end">
                 <button id="menu-button" class="text-white hover:text-red-400 p-2 rounded-lg transition-colors">
                     <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -265,37 +252,28 @@
             </div>
         </div>
     </header>
-    <!-- END HEADER -->
-
-    <!-- 4. MAIN CONTENT (ID added for smooth scroll target) -->
-    <!-- The body's padding-top handles the offset for the fixed header -->
-    <div id="top" class="max-w-xl w-full mx-auto flex flex-col items-center relative z-10">
+    <!-- END HEADER --><!-- 4. MAIN CONTENT (ID added for smooth scroll target) --><!-- The body's padding-top handles the offset for the fixed header --><div id="top" class="max-w-xl w-full mx-auto flex flex-col items-center relative z-10">
         
-        <!-- Main Title Section - Animated Slide-Up/Fade-In -->
-        <main class="text-center mt-12 mb-8 animate-fadeInUp" style="animation-delay: 0.3s;">
+        <!-- Main Title Section - Animated Slide-Up/Fade-In --><main class="text-center mt-12 mb-8 animate-fadeInUp" style="animation-delay: 0.3s;">
             <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tighter">
-                <!-- Color change applied here: NETARC (white) X (red) -->
-                NETARC<span class="text-red-400">X</span>
+                <!-- Color change applied here: NETARC (white) X (red) -->NETARC<span class="text-red-400">X</span>
                 <span class="block text-white mt-2">YOUR SEAMLESS EXPERIENCE.</span> 
             </h1>
         </main>
 
-        <!-- Phone Mockup with Red Glow - Animated Fade-In and Pulse (Pulse applied in CSS) -->
-        <div class="phone-glow-container animate-fadeInUp" style="animation-delay: 0.6s;">
+        <!-- Phone Mockup with Red Glow - Animated Fade-In and Pulse (Pulse applied in CSS) --><div class="phone-glow-container animate-fadeInUp" style="animation-delay: 0.6s;">
             <div class="phone-mockup">
                 <img 
-                    src="https://i.ibb.co/zhvK1qdz/Gemini-Generated-Image-w5moi7w5moi7w5mo-1-2.png" 
+                    src="https://i.ibb.co/FbZgwwzs/Picsart-25-12-01-08-18-47-484.jpg" 
                     alt="NETARCX App user interface preview"
                     onerror="this.src='https://placehold.co/400x800/1f2937/9ca3af?text=Loading+Image+Failed';"
                 />
             </div>
         </div>
 
-        <!-- Download Buttons and Version History - Animated Fade-In -->
-        <div class="w-full space-y-4 max-w-sm mt-12 px-4">
+        <!-- Download Buttons and Version History - Animated Fade-In --><div class="w-full space-y-4 max-w-sm mt-12 px-4">
             
-            <!-- Download Button - Pop out effect on click achieved via JavaScript class toggle -->
-            <a 
+            <!-- Download Button - Pop out effect on click achieved via JavaScript class toggle --><a 
                 href="https://drive.google.com/uc?export=download&id=1YQESnjK1zDKtHpYEMiCzS6V5dQagN3hJ" 
                 target="_blank"
                 id="download-link"
@@ -333,8 +311,7 @@
             </p>
         </div>
 
-        <!-- Features Section - Animated Fade-In (Staggered) -->
-        <section class="mt-12 w-full max-w-lg text-center px-4">
+        <!-- Features Section - Animated Fade-In (Staggered) --><section class="mt-12 w-full max-w-lg text-center px-4">
             <h2 class="text-3xl font-bold text-red-500 mb-6 animate-fadeInUp" style="animation-delay: 1.5s;">Why Choose NETARCX?</h2> 
             <div class="space-y-6 text-gray-300">
                 <div class="p-4 bg-gray-800 rounded-xl shadow-lg border-l-4 border-red-500 animate-fadeInUp" style="animation-delay: 1.7s;">
@@ -352,8 +329,7 @@
             </div>
         </section>
 
-        <!-- Footer (Credit Target) - Animated Fade-In -->
-        <footer id="credits" class="mt-16 w-full text-center text-sm text-gray-500 pb-4 animate-fadeInUp" style="animation-delay: 2.3s;">
+        <!-- Footer (Credit Target) - Animated Fade-In --><footer id="credits" class="mt-16 w-full text-center text-sm text-gray-500 pb-4 animate-fadeInUp" style="animation-delay: 2.3s;">
             <p class="text-red-400 font-semibold mb-1">
                 Disclaimer: This application is intended solely for educational and testing purposes.
             </p>
@@ -368,8 +344,7 @@
 
     </div>
 
-    <!-- JavaScript for interactivity and sidebar control -->
-    <script>
+    <!-- JavaScript for interactivity and sidebar control --><script>
         document.addEventListener('DOMContentLoaded', () => {
             const historyBtn = document.getElementById('version-history-btn');
             const historyMenu = document.getElementById('version-history-menu');
